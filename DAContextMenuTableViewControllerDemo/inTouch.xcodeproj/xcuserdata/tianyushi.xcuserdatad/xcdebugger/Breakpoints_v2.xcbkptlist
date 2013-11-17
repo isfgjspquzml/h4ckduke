@@ -70,12 +70,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"
-            timestampString = "406404208.035121"
+            timestampString = "406405547.295438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-statusSelected:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -176,7 +176,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"

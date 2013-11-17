@@ -36,7 +36,7 @@
     
     peopleArchive = [NSMutableArray array];
     peopleInbox = [NSMutableArray array];
-    peopleArchive = [NSMutableArray array];
+    peopleLater = [NSMutableArray array];
     
     NSString *url=@"http://dukeintouch.cloudapp.net:3000/api/contacts";
     self.response = [[ServerResponse alloc] initFromURLWithString:url completion:^(JSONModel *model, JSONModelError *err) {
@@ -106,7 +106,7 @@
     DADemoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSString* space = @" ";
     
-    NSMutableArray *toCheck;
+    NSMutableArray *toCheck = [NSMutableArray array];
     
     if(_statusSelected == 0) {
         toCheck = peopleArchive;
@@ -116,14 +116,13 @@
         toCheck = peopleLater;
     }
     
-    for(int i=0; i<[toCheck count]; i++) {
-        cell.nameLabel.text = [NSString stringWithFormat:@"%@/%@/%@", [[people objectAtIndex:i] firstName], space,[[people objectAtIndex:i] lastName]];
-        NSString* url =[[people objectAtIndex:i]  picUrl];
-        NSError* error = nil;
-        NSData*imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:0 error:&error];
-        cell.imageView.image = [UIImage imageWithData:imageData];
-        cell.tagsLabel.text = [[[people objectAtIndex:i] tags] componentsJoinedByString:@"# "];
-    }
+    NSString* firstName =[[[toCheck objectAtIndex:indexPath.row] firstName] stringByTrimmingCharactersInSet: [NSCharacterSet symbolCharacterSet]];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@%@%@", firstName, space,[[toCheck objectAtIndex:indexPath.row] lastName]];
+    NSString* url =[[toCheck objectAtIndex:indexPath.row]  picUrl];
+    NSError* error = nil;
+    NSData*imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:0 error:&error];
+    cell.imageView.image = [UIImage imageWithData:imageData];
+    cell.tagsLabel.text = [[[toCheck objectAtIndex:indexPath.row] tags] componentsJoinedByString:@", "];
     
     cell.dataSource = self;
     cell.delegate = self;
