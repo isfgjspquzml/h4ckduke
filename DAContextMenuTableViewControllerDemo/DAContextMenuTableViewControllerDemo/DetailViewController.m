@@ -31,6 +31,19 @@
     [super viewDidLoad];
     [_notes scrollRectToVisible:CGRectMake(0,0,1,1) animated:YES];
     _fieldID = -1;
+    
+    self.firstName.text = self.utility.firstName;
+    self.lastName.text = self.utility.lastName;
+    self.companyField.text = self.utility.company;
+    self.phoneNumber.text = self.utility.phoneNumber;
+    self.primaryEmail.text = self.utility.email;
+    
+    NSString* url = self.utility.picUrl;
+    NSError* error = nil;
+    NSData*imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:0 error:&error];
+    self.profilePic.image = [UIImage imageWithData:imageData];
+    self.tags.text = [self.utility.tags componentsJoinedByString:@", "];
+    self.notes.text = self.utility.notes;
 }
 
 - (void)didReceiveMemoryWarning

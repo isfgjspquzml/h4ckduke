@@ -163,7 +163,19 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:[self myTableView]];
+    NSIndexPath *indexPath = [self.myTableView indexPathForRowAtPoint:buttonPosition];
+    NSMutableArray<Utility> *toCheck;
+    if(_statusSelected == 0) {
+        toCheck = peopleArchive;
+    } else if (_statusSelected == 1){
+        toCheck = peopleInbox;
+    } else{
+        toCheck = peopleLater;
+    }
+    Utility *person = toCheck[indexPath.row];
+    DetailViewController* dvC = [segue destinationViewController];
+    dvC.utility = person;
 }
 
 #pragma mark * DAContextMenuCell delegate

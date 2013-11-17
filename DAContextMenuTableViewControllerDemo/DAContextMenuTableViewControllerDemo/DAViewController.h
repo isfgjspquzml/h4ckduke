@@ -10,6 +10,7 @@
 #import "Utility.h"
 #import "DAContextMenuTableViewController.h"
 #import "ServerResponse.h"
+#import "DetailViewController.h"
 
 @interface DAViewController : DAContextMenuTableViewController<UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate, UISearchDisplayDelegate>
 

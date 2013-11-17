@@ -403,6 +403,9 @@
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="e60-st-Lzd" id="nTk-zS-J41"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
                                 <constraints>
@@ -446,6 +449,7 @@
                         <outlet property="notes" destination="Lg8-1O-pB4" id="02p-hW-OEg"/>
                         <outlet property="phoneNumber" destination="dS2-AH-byE" id="lTR-dH-chw"/>
                         <outlet property="primaryEmail" destination="97k-vC-UfL" id="ZEu-Cz-Otf"/>
+                        <outlet property="profilePic" destination="UJN-Le-lnB" id="7O8-19-I9A"/>
                         <outlet property="scrollView" destination="qPU-DW-cRD" id="Nhp-4L-EkN"/>
                         <outlet property="tags" destination="kQe-Rk-y9I" id="KIx-8n-27b"/>
                     </connections>
@@ -692,6 +696,7 @@
                         <outlet property="notes" destination="UgS-KD-dA2" id="JP6-KD-N23"/>
                         <outlet property="phoneNumber" destination="Xaj-Sq-Bps" id="ZJz-Pb-ANK"/>
                         <outlet property="primaryEmail" destination="4hA-z0-arM" id="cM2-Na-7Nw"/>
+                        <outlet property="profilePic" destination="EJu-va-lGI" id="ltN-1g-KlV"/>
                         <outlet property="scrollView" destination="Lo1-kJ-HG2" id="Tdo-Bi-BhR"/>
                         <outlet property="tags" destination="fji-Fu-QwY" id="nhd-kN-NtJ"/>
                     </connections>

@@ -20,6 +20,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *tags;
 @property (strong, nonatomic) IBOutlet UITextView *notes;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIImageView *profilePic;
+
+@property (strong,nonatomic) Utility* utility;
 
 - (IBAction)saveButtonTapped:(UIButton*)sender;
 - (IBAction)editingDidBegin:(id)sender;
