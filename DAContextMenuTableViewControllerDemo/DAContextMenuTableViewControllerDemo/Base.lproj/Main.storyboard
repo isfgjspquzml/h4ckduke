@@ -142,7 +142,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hg9-CO-cgE" kind="push" id="0CL-9b-pYO"/>
+                                    <segue destination="Hg9-CO-cgE" kind="push" id="Hpc-Bk-A2Q"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -179,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="533" y="93"/>
         </scene>
-        <!--Add View Controller-->
+        <!--View Controller-->
         <scene sceneID="XWa-jb-BBl">
             <objects>
-                <viewController id="Hg9-CO-cgE" customClass="AddViewController" sceneMemberID="viewController">
+                <viewController id="Hg9-CO-cgE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ORJ-0g-RUs"/>
                         <viewControllerLayoutGuide type="bottom" id="Arb-Cw-OAm"/>

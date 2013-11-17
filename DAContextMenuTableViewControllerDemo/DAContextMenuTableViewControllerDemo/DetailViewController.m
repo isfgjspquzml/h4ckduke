@@ -32,6 +32,8 @@
     [_notes scrollRectToVisible:CGRectMake(0,0,1,1) animated:YES];
     _fieldID = -1;
     
+    if(self.utility != nil) {
+    
     self.firstName.text = self.utility.firstName;
     self.lastName.text = self.utility.lastName;
     self.companyField.text = self.utility.company;
@@ -44,6 +46,8 @@
     self.profilePic.image = [UIImage imageWithData:imageData];
     self.tags.text = [self.utility.tags componentsJoinedByString:@", "];
     self.notes.text = self.utility.notes;
+    
+    }
 }
 
 - (void)didReceiveMemoryWarning
