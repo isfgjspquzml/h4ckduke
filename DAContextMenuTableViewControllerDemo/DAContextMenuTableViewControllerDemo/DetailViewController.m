@@ -71,6 +71,7 @@
                                                                  tags:[self.tags text]
                                                                 notes:[self.notes text]
                                                                status:@"inbox"
+                                                      picUrl:self.picUrl
                                                                 email:[self.primaryEmail text]
                                                           phoneNumber:[self.phoneNumber text]
                                                        userId:_userId];

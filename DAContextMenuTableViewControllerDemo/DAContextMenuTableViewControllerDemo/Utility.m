@@ -10,7 +10,7 @@
 
 @implementation Utility
 
-+(id) initWithStringfirstName: (NSString*) firstName lastName:(NSString*)lastName company:(NSString*) company tags:(NSString*) tags notes:(NSString*) notes status:(NSString*) status email:(NSString*) email phoneNumber:(NSString*) phoneNumber userId:(NSString *)userId
++(id) initWithStringfirstName: (NSString*) firstName lastName:(NSString*)lastName company:(NSString*) company tags:(NSString*) tags notes:(NSString*) notes status:(NSString*) status picUrl:(NSString*) picUrl email:(NSString*) email phoneNumber:(NSString*) phoneNumber userId:(NSString *)userId
 {
     Utility* toJSON = [[Utility alloc] init];
     toJSON.firstName = firstName;
@@ -19,6 +19,7 @@
     toJSON.tags = tags;
     toJSON.notes = notes;
     toJSON.status = status;
+    toJSON.picUrl = picUrl;
     toJSON.email = email;
     toJSON.phoneNumber = phoneNumber;
     toJSON.userId = userId;

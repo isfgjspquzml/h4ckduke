@@ -24,6 +24,9 @@
 @implementation DAViewController
 {
     NSMutableArray<Utility>* people;
+    NSMutableArray<Utility>* peopleArchive;
+    NSMutableArray<Utility>* peopleInbox;
+    NSMutableArray<Utility>* peopleLater;
 }
 
 - (void)viewDidLoad
@@ -31,12 +34,29 @@
     [super viewDidLoad];
     self.title = @"Inbox";
     
+    peopleArchive = [NSMutableArray array];
+    peopleInbox = [NSMutableArray array];
+    peopleArchive = [NSMutableArray array];
+    
     NSString *url=@"http://dukeintouch.cloudapp.net:3000/api/contacts";
     self.response = [[ServerResponse alloc] initFromURLWithString:url completion:^(JSONModel *model, JSONModelError *err) {
         NSLog(@"response: %@", self.response);
         people = (NSMutableArray<Utility> *) self.response.response;
+        for(int i=0; i<[people count]; i++) {
+            if([[[people objectAtIndex:i] status] isEqualToString:@"archive"]) {
+                [peopleArchive addObject:[people objectAtIndex:i]];
+            }
+            if([[[people objectAtIndex:i] status] isEqualToString:@"inbox"]) {
+                [peopleInbox addObject:[people objectAtIndex:i]];
+            }
+            if([[[people objectAtIndex:i] status] isEqualToString:@"later"]) {
+                [peopleLater addObject:[people objectAtIndex:i]];
+            }
+        }
         [self.myTableView reloadData];
     }];
+    
+    _statusSelected = 1;
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -71,46 +91,39 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = 0;
-    for(int i=0; i<[people count]; i++) {
-        if(self.segmentedControl.selectedSegmentIndex == 0){
-            if([[[people objectAtIndex:i] status] isEqualToString:@"archive"]) {
-                count++;
-            }
-        } else if (self.segmentedControl.selectedSegmentIndex == 1) {
-            if([[[people objectAtIndex:i] status] isEqualToString:@"inbox"]) {
-                count++;
-            }
-        } else {
-            if([[[people objectAtIndex:i] status] isEqualToString:@"later"]) {
-                count++;
-            }
-        }
+    if(self.segmentedControl.selectedSegmentIndex == 0){
+        return [peopleArchive count];
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        return [peopleInbox count];
+    } else {
+        return [peopleLater count];
     }
-    
-    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     DADemoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSString* space = @" ";
     
-    //    if(self.segmentedControl.selectedSegmentIndex == 0){
-    //        cell.nameLabel.text = [archived_tableData objectAtIndex:indexPath.row];
-    //        cell.imageView.image = [UIImage imageNamed:[archived_thumbnails objectAtIndex:indexPath.row]];
-    //        cell.tagsLabel.text = [archived_tags objectAtIndex:indexPath.row];
-    //
-    //    }else if (self.segmentedControl.selectedSegmentIndex == 1){
-    //        cell.nameLabel.text = [inbox_tableData objectAtIndex:indexPath.row];
-    //        cell.imageView.image = [UIImage imageNamed:[inbox_thumbnails objectAtIndex:indexPath.row]];
-    //        cell.tagsLabel.text = [inbox_tags objectAtIndex:indexPath.row];
-    //
-    //    }else{
-    //        cell.nameLabel.text = [later_tableData objectAtIndex:indexPath.row];
-    //        cell.imageView.image = [UIImage imageNamed:[later_thumbnails objectAtIndex:indexPath.row]];
-    //        cell.tagsLabel.text = [later_tags objectAtIndex:indexPath.row];
-    //    }
+    NSMutableArray *toCheck;
+    
+    if(_statusSelected == 0) {
+        toCheck = peopleArchive;
+    } else if (_statusSelected == 1){
+        toCheck = peopleInbox;
+    } else{
+        toCheck = peopleLater;
+    }
+    
+    for(int i=0; i<[toCheck count]; i++) {
+        cell.nameLabel.text = [NSString stringWithFormat:@"%@/%@/%@", [[people objectAtIndex:i] firstName], space,[[people objectAtIndex:i] lastName]];
+        NSString* url =[[people objectAtIndex:i]  picUrl];
+        NSError* error = nil;
+        NSData*imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:0 error:&error];
+        cell.imageView.image = [UIImage imageWithData:imageData];
+        cell.tagsLabel.text = [[[people objectAtIndex:i] tags] componentsJoinedByString:@"# "];
+    }
     
     cell.dataSource = self;
     cell.delegate = self;
@@ -125,16 +138,16 @@
 
 #pragma mark * DAContextMenuCell data source
 
-- (NSUInteger)numberOfButtonsInContextMenuCell:(DAContextMenuCell *)cell
-{
-    return 2;
-}
-
-- (UIButton *)contextMenuCell:(DAContextMenuCell *)cell buttonAtIndex:(NSUInteger)index
-{
-    DADemoCell *demoCell = [cell isKindOfClass:[DADemoCell class]] ? (DADemoCell *)cell : nil;
-    switch (index) {
-        case 0: return demoCell.remindButton;
+    - (NSUInteger)numberOfButtonsInContextMenuCell:(DAContextMenuCell *)cell
+    {
+        return 2;
+    }
+    
+    - (UIButton *)contextMenuCell:(DAContextMenuCell *)cell buttonAtIndex:(NSUInteger)index
+    {
+        DADemoCell *demoCell = [cell isKindOfClass:[DADemoCell class]] ? (DADemoCell *)cell : nil;
+        switch (index) {
+            case 0: return demoCell.remindButton;
         case 1: return demoCell.archiveButton;
         default: return nil;
     }
@@ -146,6 +159,7 @@
 }
 
 -(IBAction)statusSelected:(id)sender{
+    _statusSelected = [sender selectedSegmentIndex];
     [self.tableView reloadData];
 }
 
@@ -163,10 +177,11 @@
             [actionSheet showInView:self.view];
         } break;
         case 1: {
-            if ([self.tableView indexPathForCell:cell]) {
-                self.rowsCount -= 1;
-                [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell:cell]] withRowAnimation:UITableViewRowAnimationFade];
-            }
+//            [peopleInbox objectAtIndex:0] = @"archive";
+            Utility *remove = [peopleInbox objectAtIndex:0];
+            [peopleInbox removeObject:remove];
+            [peopleArchive addObject:remove];
+            [self.tableView reloadData];
         } break;
         default: break;
             

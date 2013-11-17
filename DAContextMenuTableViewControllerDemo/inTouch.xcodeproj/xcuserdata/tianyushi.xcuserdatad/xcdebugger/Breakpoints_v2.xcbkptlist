@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/DetailViewController.h"
-            timestampString = "406387522.786983"
+            timestampString = "406399900.245994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28">
+            startingLineNumber = "29"
+            endingLineNumber = "29">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -70,11 +70,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"
-            timestampString = "406397796.319483"
+            timestampString = "406403090.785164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "@implementation DAViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -86,12 +86,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/Utility.m"
-            timestampString = "406387522.786983"
+            timestampString = "406399900.245994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "+initWithStringfirstName:lastName:company:tags:notes:status:email:phoneNumber:userId:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+initWithStringfirstName:lastName:company:tags:notes:status:picUrl:email:phoneNumber:userId:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -134,7 +134,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"
-            timestampString = "406396490.111068"
+            timestampString = "406402911.210598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -180,13 +180,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"
-            timestampString = "406396815.816219"
+            timestampString = "406403090.785164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"
+            timestampString = "406403100.66843"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DAContextMenuTableViewControllerDemo/DAViewController.m"
+            timestampString = "406403189.463509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[DAViewController viewDidLoad]_block_invoke"
+                  moduleName = "inTouch"
+                  urlString = "file:///Users/tianyushi/Desktop/h4ckduke/DAContextMenuTableViewControllerDemo/DAContextMenuTableViewControllerDemo/DAViewController.m"
+                  timestampString = "406403194.158275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "274">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[DAViewController viewDidLoad]_block_invoke"
+                  moduleName = "inTouch"
+                  urlString = "file:///Users/tianyushi/Desktop/h4ckduke/DAContextMenuTableViewControllerDemo/DAContextMenuTableViewControllerDemo/DAViewController.m"
+                  timestampString = "406403194.158529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1128">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

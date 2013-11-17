@@ -19,12 +19,13 @@
 @property NSString<Optional>* company;
 @property NSArray<Optional>* tags;
 @property NSString<Optional>* notes;
+@property NSString* picUrl;
 @property NSString* status;
 @property NSString* email;
 @property NSString* phoneNumber;
 @property NSString* userId;
 @property NSString<Optional>* _id;
 
-+(id) initWithStringfirstName: (NSString*) firstName lastName:(NSString*)lastName company:(NSString*) company tags:(NSString*) tags notes:(NSString*) notes status:(NSString*) status email:(NSString*) email phoneNumber:(NSString*) phoneNumber userId:(NSString*) userId;
++(id) initWithStringfirstName: (NSString*) firstName lastName:(NSString*)lastName company:(NSString*) company tags:(NSString*) tags notes:(NSString*) notes status:(NSString*) status picUrl:(NSString*) picUrl email:(NSString*) email phoneNumber:(NSString*) phoneNumber userId:(NSString*) userId;
 
 @end

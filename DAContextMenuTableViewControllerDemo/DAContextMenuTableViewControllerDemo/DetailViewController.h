@@ -16,6 +16,7 @@
 @property (strong, atomic) IBOutlet UITextField *companyField;
 @property (strong, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (strong, nonatomic) IBOutlet UITextField *primaryEmail;
+@property NSString* picUrl;
 @property (strong, nonatomic) IBOutlet UITextField *tags;
 @property (strong, nonatomic) IBOutlet UITextView *notes;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
