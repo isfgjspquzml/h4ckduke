@@ -60,15 +60,30 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    //    NSString *url=@"10.190.54.255:8888/";
-    //    NSString *url = [[NSString alloc] initWithFormat:@"http://%@search/generic/?search=%@&count=%d", ip, searchTerm, 20];
-    //    self.dataController.searchResult = [[SearchResult alloc] initFromURLWithString:url completion:^(JSONModel *model, JSONModelError *err) {
-    //        //json fetched
-    //        //NSLog(@"response: %@", self.dataController.searchResult.response);
-    //        self.dataController.masterContactList = (NSMutableArray *)self.dataController.searchResult.response;
-    //        [self.collectionView reloadData];
-    //        [self.spinner stopAnimating];
-    //    }];
+    peopleArchive = [NSMutableArray array];
+    peopleInbox = [NSMutableArray array];
+    peopleLater = [NSMutableArray array];
+    
+    NSString *query = [searchBar text];
+    NSString *userId = @"313131313131313131313131";
+    NSString *url=[[NSString alloc] initWithFormat:@"http://dukeintouch.cloudapp.net:3000/api/contacts/search?term=%@&userId=%@", query, userId];
+    self.response = [[ServerResponse alloc] initFromURLWithString:url completion:^(JSONModel *model, JSONModelError *err) {
+        NSLog(@"response: %@", self.response);
+        people = (NSMutableArray<Utility> *) self.response.response;
+        for(int i=0; i<[people count]; i++) {
+            if([[[people objectAtIndex:i] status] isEqualToString:@"archive"]) {
+                [peopleArchive addObject:[people objectAtIndex:i]];
+            }
+            if([[[people objectAtIndex:i] status] isEqualToString:@"inbox"]) {
+                [peopleInbox addObject:[people objectAtIndex:i]];
+            }
+            if([[[people objectAtIndex:i] status] isEqualToString:@"later"]) {
+                [peopleLater addObject:[people objectAtIndex:i]];
+            }
+        }
+
+        [self.myTableView reloadData];
+    }];
 }
 
 #pragma mark - Private
@@ -123,6 +138,8 @@
     NSData*imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:0 error:&error];
     cell.imageView.image = [UIImage imageWithData:imageData];
     cell.tagsLabel.text = [[[toCheck objectAtIndex:indexPath.row] tags] componentsJoinedByString:@", "];
+    
+    cell.notesLabel.text = [[toCheck objectAtIndex:indexPath.row] notes];
     
     cell.dataSource = self;
     cell.delegate = self;
