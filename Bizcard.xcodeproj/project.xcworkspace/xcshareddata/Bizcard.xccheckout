@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>84486524-8AE1-49F0-9E07-1F1683599244</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bizcard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3B9F94EB-C63C-4291-85D3-AB1A0DAAAD85</key>
+		<string>https://github.com/chcokr/bizcard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Bizcard.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3B9F94EB-C63C-4291-85D3-AB1A0DAAAD85</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chcokr/bizcard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3B9F94EB-C63C-4291-85D3-AB1A0DAAAD85</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3B9F94EB-C63C-4291-85D3-AB1A0DAAAD85</string>
+			<key>IDESourceControlWCCName</key>
+			<string>bizcard</string>
+		</dict>
+	</array>
+</dict>
+</plist>

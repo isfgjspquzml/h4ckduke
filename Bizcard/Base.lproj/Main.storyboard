@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Bizcard View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="BizcardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a6i-vG-xwB"/>
+                        <viewControllerLayoutGuide type="bottom" id="HfK-2R-D5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uc1-jn-yNY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bizcards made easy." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUe-ZJ-LJU">
+                                        <rect key="frame" x="28" y="29" width="264" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="HVe-VP-j26"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snap a photo of a namecard." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boh-UF-kWl">
+                                        <rect key="frame" x="46" y="67" width="229" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="gTz-ey-Nrc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ms4-Ff-Jvt">
+                                        <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ANb-AC-Gvb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Snap it.">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="captureStillImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cbW-ax-ZyD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Boh-UF-kWl" firstAttribute="top" secondItem="MUe-ZJ-LJU" secondAttribute="bottom" constant="-3" id="05a-AP-C4p"/>
+                                    <constraint firstAttribute="bottom" secondItem="ms4-Ff-Jvt" secondAttribute="bottom" id="0g6-tC-CiN"/>
+                                    <constraint firstItem="MUe-ZJ-LJU" firstAttribute="leading" secondItem="uc1-jn-yNY" secondAttribute="leading" constant="28" id="2SA-a9-rF4"/>
+                                    <constraint firstAttribute="trailing" secondItem="MUe-ZJ-LJU" secondAttribute="trailing" constant="28" id="A4S-9U-s1m"/>
+                                    <constraint firstAttribute="trailing" secondItem="Boh-UF-kWl" secondAttribute="trailing" constant="45" id="Tiw-dc-ur1"/>
+                                    <constraint firstItem="ms4-Ff-Jvt" firstAttribute="leading" secondItem="uc1-jn-yNY" secondAttribute="leading" id="Up5-OJ-PJX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ms4-Ff-Jvt" secondAttribute="trailing" id="UyI-sT-K8X"/>
+                                    <constraint firstItem="Boh-UF-kWl" firstAttribute="leading" secondItem="uc1-jn-yNY" secondAttribute="leading" constant="46" id="hZG-uw-I4E"/>
+                                    <constraint firstItem="MUe-ZJ-LJU" firstAttribute="top" secondItem="uc1-jn-yNY" secondAttribute="top" constant="29" id="sig-cx-EKg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uc1-jn-yNY" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="0Qo-hS-LSH"/>
+                            <constraint firstAttribute="bottom" secondItem="uc1-jn-yNY" secondAttribute="bottom" id="X6a-er-mIF"/>
+                            <constraint firstItem="uc1-jn-yNY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ewv-iP-sDx"/>
+                            <constraint firstAttribute="trailing" secondItem="uc1-jn-yNY" secondAttribute="trailing" id="zwE-Qd-4ix"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="header" destination="MUe-ZJ-LJU" id="9U7-5m-ooj"/>
+                        <outlet property="snapButton" destination="ms4-Ff-Jvt" id="EJm-aN-CLt"/>
+                        <outlet property="subheader" destination="Boh-UF-kWl" id="eBX-dc-2cC"/>
+                        <outlet property="videoPreviewView" destination="uc1-jn-yNY" id="U4B-3Q-eSj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-85" y="54"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
