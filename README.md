@@ -3,6 +3,8 @@ h4ckduke
 
 Group hackathon project
 
+YJ Yang, Mack Yi, Tianyu Shi, and Jeff Hou
+
 inTouch is a social application to remind yourself to keep in contact with friends or acquaintances. 
 When added to your inbox, contacts can be archived or be added to a reminder list.
 
